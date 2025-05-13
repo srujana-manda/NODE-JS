@@ -1,0 +1,60 @@
+{
+    "info": {
+      "name": "School Management API Collection",
+      "_postman_id": "12345678-abcd-1234-abcd-1234567890ab",
+      "description": "A collection for testing School Management API endpoints",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+      {
+        "name": "Add School",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"name\": \"Green Valley High School\",\n  \"address\": \"123 Hilltop Rd, Hyderabad\",\n  \"latitude\": 17.385044,\n  \"longitude\": 78.486671\n}"
+          },
+          "url": {
+            "raw": "http://localhost:3000/addSchool",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "3000",
+            "path": ["addSchool"]
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "List Schools by Proximity",
+        "request": {
+          "method": "GET",
+          "header": [],
+          "url": {
+            "raw": "http://localhost:3000/listSchools?latitude=17.385044&longitude=78.486671",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "3000",
+            "path": ["listSchools"],
+            "query": [
+              {
+                "key": "latitude",
+                "value": "17.385044"
+              },
+              {
+                "key": "longitude",
+                "value": "78.486671"
+              }
+            ]
+          }
+        },
+        "response": []
+      }
+    ]
+  }
+  
